@@ -30,39 +30,39 @@ function App() {
         <div className="cotainer">
             <div className="cabeçalho">
                 <img
-                    src="vitrine/src/images/cabeçalho.png"
+                    src="/static/images/cabeçalho.png"
                     alt="Cabeçalho da página"
                 />
             </div>
             <div className="banner">
                 <img
-                    src="vitrine/src/images/img-banner.png"
+                    src="static/images/img-banner.png"
                     alt="Banner do cabeçalho"
                 />
             </div>
             <div className="barra-icons">
-                <img
-                    src="vitrine/src/images/img-barra-icons.png"
-                    alt="Icones"
-                />
+                <img src="static/images/img-barra-icons.png" alt="Icones" />
             </div>
             <div className="tipos-de-produtos">
                 <img
-                    src="vitrine/src/images/img-tipos-produto.png"
+                    src="static/images/img-tipos-produto.png"
                     alt="Tipos de produto"
                 />
             </div>
             <div className="carousel" ref={carousel}>
                 {data.map((item) => {
-                    const { productName, descriptionShort, photo, price } =
-                        item;
+                    const { productName, descriptionShort, img, price } = item;
                     return (
                         <div className="item" key={productName}>
                             <div className="info">
                                 <span className="descrição">
                                     {descriptionShort}
                                 </span>
-                                <span className="image-produto">{photo}</span>
+                                <img
+                                    className="image-produto"
+                                    src={img}
+                                    alt="Produto"
+                                />
                                 <span className="valor-produto">{price}</span>
                             </div>
                         </div>
@@ -82,25 +82,25 @@ function App() {
             </div>
             <div className="parceiros">
                 <img
-                    src="vitrine/src/images/img-parceiros.png"
+                    src="static/images/img-parceiros.png"
                     alt="Imagem banner parceiros"
                 />
             </div>
             <div className="produtos">
                 <img
-                    src="vitrine/src/images/img-produtos.png"
+                    src="static/images/img-produtos.png"
                     alt="Imagem banner produtos"
                 />
             </div>
             <div className="marcas">
                 <img
-                    src="vitrine/src/images/img-marcas.png"
+                    src="static/images/img-marcas.png"
                     alt="Imagens das marcas"
                 />
             </div>
             <div className="footer">
                 <img
-                    src="vitrine/src/images/img-fundo-footer.png"
+                    src="static/images/img-fundo-footer.png"
                     alt="Imagem de fundo do rodapé"
                 />
             </div>
