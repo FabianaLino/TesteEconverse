@@ -1,8 +1,8 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
+export const Home = () => {
 
-export const App = () => {
-    const [data, setData] = useState([]);
+const [data, setData] = useState([]);
     const carousel = useRef(null);
 
     useEffect(() => {
@@ -13,7 +13,7 @@ export const App = () => {
             .then(setData);
     }, []);
 
-    //if (!data || !data.length) return null;
+    if (!data || !data.length) return null;
 
     const handleLeftClick = (e) => {
         e.preventDefault();
@@ -25,8 +25,9 @@ export const App = () => {
         carousel.current.scrollLeft += carousel.current.offsetWidth;
     };
 
+
     return (
-        <div className="cotainer">
+        <div className="container">
             <div className="cabeçalho">
                 <img
                     src="/static/images/cabeçalho.png"
@@ -50,7 +51,7 @@ export const App = () => {
             </div>
             <div className="carousel" ref={carousel}>
                 {data.map((item) => (
-                    const { productName, descriptionShort, img, price } = item;
+                    //const {productName, descriptionShort, img, price} = item;
                     return (
                         <div className="item" key={productName}>
                             <div className="info">
@@ -104,6 +105,6 @@ export const App = () => {
                 />
             </div>
         </div>
-    );
-}
 
+    )
+};
