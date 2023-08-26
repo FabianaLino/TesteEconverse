@@ -1,8 +1,7 @@
-import React from "react";
 import { useEffect, useState, useRef } from "react";
-import "./App.css";
 
-function App() {
+
+export const App = () => {
     const [data, setData] = useState([]);
     const carousel = useRef(null);
 
@@ -14,7 +13,7 @@ function App() {
             .then(setData);
     }, []);
 
-    if (!data || !data.length) return null;
+    //if (!data || !data.length) return null;
 
     const handleLeftClick = (e) => {
         e.preventDefault();
@@ -50,7 +49,7 @@ function App() {
                 />
             </div>
             <div className="carousel" ref={carousel}>
-                {data.map((item) => {
+                {data.map((item) => (
                     const { productName, descriptionShort, img, price } = item;
                     return (
                         <div className="item" key={productName}>
@@ -67,7 +66,7 @@ function App() {
                             </div>
                         </div>
                     );
-                })}
+                ))}
             </div>
             <div className="buttons">
                 <button onClick={handleLeftClick}>
@@ -108,4 +107,3 @@ function App() {
     );
 }
 
-export default App;
